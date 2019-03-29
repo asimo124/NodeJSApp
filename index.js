@@ -24,5 +24,5 @@ http.createServer(function(req, res) {
 	logger.log("req: ", req.url);
 	res.writeHead(200, { 'Content-Type': 'text/plain' })
 	res.end('Hello world\n');
-}).listen(PORT, '127.0.0.1');
+}).listen(PORT);
 //*/
