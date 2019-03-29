@@ -21,8 +21,15 @@ const errorOutput = fs.createWriteStream('./stderr.log');
 const logger = new console.Console(output, errorOutput);
 
 http.createServer(function(req, res) {
-	logger.log("req: ", req.url);
-	res.writeHead(200, { 'Content-Type': 'text/plain' })
-	res.end('Hello world\n');
+
+	res.writeHead(200, { 'Content-Type': 'text/html' });
+	//fs.createReadStream(__dirname + "/index.html").pipe(res);
+
+	var obj = {
+		firstname: 'Alex',
+		lastname: 'Hawley'
+	}
+	res.end(JSON.stringify(obj));
+
 }).listen(PORT);
 //*/
