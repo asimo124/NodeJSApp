@@ -14,7 +14,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
 	host     : 'us-cdbr-iron-east-03.cleardb.net',
-	user     : '/bd5f7a78084af4',
+	user     : 'bd5f7a78084af4',
 	password : 'be0208f5',
 	database : 'express2'
 });
