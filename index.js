@@ -46,10 +46,10 @@ express()
 	})
 	.get('/api', (req, res) => res.json({ test: 1234, data: "Here" }))
 	.get('/books/check', (req, res) => {
-		connection.query('SELECT name from book', function (error, results, fields) {
+		connection.query('SELECT * from book', function (error, results, fields) {
 			if (error) throw error;
 			console.log('The solution is: ', results[0].name);
-			res.json({ bookName: results[0].name})
+			res.json({ bookName: results})
 		});
 	})
 	.get('/cool', (req, res) => res.send(cool()))
